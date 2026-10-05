@@ -14,3 +14,10 @@ def undo():
         delete(f'file_{e}.txt')
 
 ask = input("Do you want to create or delete files? (create/delete): ").strip().lower()
+
+if ask == "create":
+    create()
+    print("Files created successfully.")
+elif ask == "delete":
+    undo()
+    print("Files deleted successfully.")
