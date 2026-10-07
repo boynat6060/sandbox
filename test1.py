@@ -13,11 +13,15 @@ def undo():
     for e in range(25):
         delete(f'file_{e}.txt')
 
-ask = input("Do you want to create or delete files? (create/delete): ").strip().lower()
-
-if ask == "create":
-    create()
-    print("Files created successfully.")
-elif ask == "delete":
-    undo()
-    print("Files deleted successfully.")
+while True:
+    ask = input("Do you want to create or delete files? (create/delete): ").lower()
+    if ask == "create":
+        create()
+        print("Files created successfully.")
+        askAgain = input("New Command?").lower()
+    elif ask == "delete":
+        undo()
+        print("Files deleted successfully.")
+        askAgain = input("New Command?").lower()
+    else:
+        print("Please try again.")
