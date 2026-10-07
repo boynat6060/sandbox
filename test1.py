@@ -1,6 +1,6 @@
 from pathlib import Path
 
-amount = 125
+amount = 1000
 
 def create():
     for h in range(amount):
